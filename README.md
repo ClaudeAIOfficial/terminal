@@ -1,22 +1,26 @@
-# VLAD TERMINAL
+# Vlad Terminal — Vercel Fixed
 
-Vercel-ready Vite project.
+This version is intentionally a zero-build static site.
 
-## Deploy to Vercel
+## Why the previous deployment failed
 
-1. Create a new GitHub repository.
-2. Upload the **contents** of this folder to the repository root (`package.json` must be at the root).
-3. In Vercel, choose **Add New → Project** and import that repo.
-4. Vercel should detect **Vite** automatically.
-5. Build command: `npm run build`
-6. Output directory: `dist`
-7. Deploy.
+Vercel ran `vite build`, but the deployed repository did not contain the referenced `/src/main.js`.
+That caused:
 
-No environment variables or API keys are required.
+`[vite:build-html] Failed to resolve /src/main.js from /vercel/path0/index.html`
 
-## Local run
+## Fix
 
-```bash
-npm install
-npm run dev
-```
+This project has:
+- `index.html` — entire Vlad Terminal app, including CSS, JavaScript, and the Vlad image
+- `vercel.json` — simple static-site configuration
+- no Vite dependency
+- no `/src/main.js`
+- no build command
+- no API keys required
+
+## Deploy
+
+Upload the contents of this folder to the ROOT of the GitHub repository, then redeploy it on Vercel.
+
+Important: delete the old `package.json`, `src/`, and old `index.html` from the GitHub repo before replacing them with these files, otherwise Vercel may keep detecting the old Vite app.
