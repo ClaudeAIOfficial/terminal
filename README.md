@@ -1,23 +1,22 @@
-# Vlad Terminal
+# VLAD TERMINAL
 
-A static AGI-style autonomous thought terminal for Vlad.
+Vercel-ready Vite project.
 
-## Run locally
+## Deploy to Vercel
 
-Just open `index.html` in your browser.
+1. Create a new GitHub repository.
+2. Upload the **contents** of this folder to the repository root (`package.json` must be at the root).
+3. In Vercel, choose **Add New → Project** and import that repo.
+4. Vercel should detect **Vite** automatically.
+5. Build command: `npm run build`
+6. Output directory: `dist`
+7. Deploy.
 
-## Deploy
+No environment variables or API keys are required.
 
-### GitHub Pages
-1. Upload all files in this folder to a GitHub repository.
-2. Go to **Settings → Pages**.
-3. Set deployment source to your main branch / root.
-4. Save.
+## Local run
 
-### Vercel
-Import the GitHub repository into Vercel. No build command is required.
-
-## Notes
-- The Vlad character image is embedded directly inside `index.html`.
-- No external assets or API keys are required.
-- Random thoughts are generated locally in the browser.
+```bash
+npm install
+npm run dev
+```
